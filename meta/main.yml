@@ -1,9 +1,10 @@
 ---
 galaxy_info:
-  author: webbylab
-  description:
-  company: WebbyLab
+  author: dhellmann
+  description: exim4 installer (based on original version by WebbyLab)
+  company:
   license: MIT
+  issue_tracker_url: https://github.com/dhellmann/ansible-role-exim4-sender/issues
   min_ansible_version: 1.5
   platforms:
   - name: Ubuntu
@@ -12,3 +13,4 @@ galaxy_info:
   categories:
   - networking
   - system
+dependencies: []
