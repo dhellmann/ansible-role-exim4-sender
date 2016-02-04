@@ -24,4 +24,5 @@ MIT
 
 Author Information
 ------------------
-WebbyLab (http://webbylab.com)
+Doug Hellmann (https://doughellmann.com)
+original version by WebbyLab (http://webbylab.com)
