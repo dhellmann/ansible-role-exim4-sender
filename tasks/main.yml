@@ -1,24 +1,32 @@
 ---
 - name: Install Exim4 package
-  apt: name={{item}} state=present
-  with_items:
-     - exim4-daemon-light
-     - mailutils
-  sudo: true
+  become: yes
+  apt:
+    name:
+      - exim4-daemon-light
+      - mailutils
+    state: present
 
 - name: Create update-exim4.conf configuration file
-  template: src=update-exim4.conf.conf.j2 dest=/etc/exim4/update-exim4.conf.conf
+  become: yes
+  template:
+    src: update-exim4.conf.conf.j2
+    dest: /etc/exim4/update-exim4.conf.conf
   notify:
     - run update-exim4.conf
     - restart exim4
-  sudo: true
 
 - name: Update mailname file
-  template: src=mailname.j2 dest=/etc/mailname
+  become: yes
+  template:
+    src: mailname.j2
+    dest: /etc/mailname
   notify:
     - restart exim4
-  sudo: true
 
 - name: Start Exim4 Service
-  service: name=exim4 state=started enabled=true
-  sudo: true
+  become: yes
+  service:
+    name: exim4
+    state: started
+    enabled: true
